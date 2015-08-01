@@ -44,14 +44,14 @@ C_DEPS += \
 src/%.o: ../src/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: MCU C Compiler'
-	arm-none-eabi-gcc -DNDEBUG  -DCORE_M0 -D__USE_CMSIS -D__LPC11UXX__ -I"/home/yliu/projects/ib51822/IBDAP-FW/Firmware/IBDAP/inc" -I"/home/yliu/projects/ib51822/IBDAP-FW/Firmware/IBDAP/inc/usbd" -Os -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -v -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	arm-none-eabi-gcc -DNDEBUG  -DCORE_M0 -D__USE_CMSIS -D__LPC11UXX__ -I"../inc" -I"../inc/usbd" -Os -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -v -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 src/system_LPC11Uxx.o: ../src/system_LPC11Uxx.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: MCU C Compiler'
-	arm-none-eabi-gcc -DNDEBUG -DCORE_M0 -D__USE_CMSIS -D__LPC11UXX__ -I"/home/yliu/projects/ib51822/IBDAP-FW/Firmware/IBDAP/inc" -I"/home/yliu/projects/ib51822/IBDAP-FW/Firmware/IBDAP/inc/usbd" -Os -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -v -MMD -MP -MF"$(@:%.o=%.d)" -MT"src/system_LPC11Uxx.d" -o "$@" "$<"
+	arm-none-eabi-gcc -DNDEBUG -DCORE_M0 -D__USE_CMSIS -D__LPC11UXX__ -I"../inc" -I"../inc/usbd" -Os -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -v -MMD -MP -MF"$(@:%.o=%.d)" -MT"src/system_LPC11Uxx.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
