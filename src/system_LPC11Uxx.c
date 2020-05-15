@@ -377,7 +377,7 @@ void SystemCoreClockUpdate (void)            /* Get Core Clock Frequency      */
 
 }
 
-__INLINE void SYSCTL_PowerDown(uint32_t powerdownmask)
+__STATIC_INLINE void SYSCTL_PowerDown(uint32_t powerdownmask)
 {
 	uint32_t pdrun;
 
@@ -386,7 +386,7 @@ __INLINE void SYSCTL_PowerDown(uint32_t powerdownmask)
 	LPC_SYSCON->PDRUNCFG = (pdrun | PDRUNCFGUSEMASK);
 }
 
-__INLINE void SYSCTL_PowerUp(uint32_t powerupmask)
+__STATIC_INLINE void SYSCTL_PowerUp(uint32_t powerupmask)
 {
 	uint32_t pdrun;
 
